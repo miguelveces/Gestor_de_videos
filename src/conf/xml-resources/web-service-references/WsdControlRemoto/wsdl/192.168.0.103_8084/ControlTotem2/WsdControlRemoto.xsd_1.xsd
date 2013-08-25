@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://servicios.panama.sportline/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios.panama.sportline/">
+
+<xs:element name="controlremoto" type="tns:controlremoto" />
+
+<xs:element name="controlremotoResponse" type="tns:controlremotoResponse" />
+
+<xs:complexType name="controlremoto">
+<xs:sequence>
+<xs:element name="set_user" type="tns:set_user" minOccurs="0" />
+<xs:element name="set_caja" type="tns:set_caja" minOccurs="0" />
+<xs:element name="set_cmd" type="tns:comandos" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="set_user">
+<xs:sequence>
+<xs:element name="now" type="xs:string" />
+<xs:element name="login" type="xs:string" />
+<xs:element name="company" type="xs:string" />
+<xs:element name="authString" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="set_caja">
+<xs:sequence>
+<xs:element name="ip" type="xs:string" />
+<xs:element name="usrcaja" type="xs:string" />
+<xs:element name="pwdcaja" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="comandos">
+<xs:sequence>
+<xs:element name="propertyCommand" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="controlremotoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user_response" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="user_response">
+<xs:sequence>
+<xs:element name="result_code" type="xs:int" />
+<xs:element name="error_msg" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
